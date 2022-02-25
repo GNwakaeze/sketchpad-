@@ -31,5 +31,5 @@ header {
     box-sizing: border-box;
     height: 10px; 
     width: 10px; 
-    border: 1px solid grey;  
+    /*border: 1px solid grey;  */
 }
