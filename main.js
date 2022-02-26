@@ -22,11 +22,15 @@ btn.addEventListener('click', () => {
     if (userChoice == '' || userChoice > 100 || userChoice < 1) {
         alert('you need to pick a number between 1 - 100. Please try again');
     } else {
+        let random = Math.floor(Math.random()* 1001);
+        let colour = `rgb(${random},${random},${random})`
+
         container.setAttribute('style', `display: grid; grid-template-columns: repeat(${userChoice}, 1fr); grid-template-rows: repeat(${userChoice}, 1fr)`);
+        
         for (i=0; i < (userChoice*userChoice); i++) {
             let grid = document.createElement('div');
-            grid.setAttribute('style', 'border: 1px  solid grey')
-            grid.addEventListener('mouseover', () => {grid.style.backgroundColor = 'grey'});
+            grid.setAttribute('style', 'border: 1px  solid grey');
+            grid.addEventListener('mouseover', () => {grid.style.backgroundColor = colour});
             container.appendChild(grid);
         }
     } 
