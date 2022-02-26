@@ -2,6 +2,15 @@ const container = document.querySelector('.container');
 const gridSquare = document.querySelector('.gridSquare')
 const header = document.querySelector('header')
 
+container.style.height = '200px';
+container.style.width = '200px';
+for (i=0; i < 256; i++) {
+    let grid = document.createElement('div');
+    grid.classList.add('gridSquare');
+    grid.addEventListener('mouseover', () => {grid.style.backgroundColor = 'grey'});
+    container.appendChild(grid);
+}
+
 let btn = document.createElement('button');
 btn.textContent = "New Sketch Pad";
 btn.style.fontSize = '17px';
@@ -31,17 +40,7 @@ function getPad() {
     } 
 }
 
-function clearPad() {
-    
 
-    /*
-    get container 
-    remove all its children 
-    then run get 
-    */
-
-    getPad();
-}
 
 
 
